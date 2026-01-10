@@ -3,37 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aleksandr | Foggy Tunnel</title>
+    <title>Aleksandr Borodin | Expert</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', sans-serif;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
                         url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover; background-position: center;
-            height: 100vh; display: flex; align-items: center; justify-content: center; color: white;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
         .card {
-            background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2); padding: 40px;
-            border-radius: 20px; text-align: center; max-width: 400px; width: 90%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 50px 40px;
+            border-radius: 24px;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
-        h1 { font-size: 28px; margin-bottom: 10px; }
-        p { color: #ccc; margin-bottom: 25px; }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+        .title {
+            color: #e0e0e0;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
         .btn {
-            display: block; text-decoration: none; color: white;
-            background: rgba(255,255,255,0.2); padding: 12px;
-            border-radius: 10px; margin-bottom: 10px; transition: 0.3s;
+            display: block;
+            text-decoration: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 500;
         }
-        .btn:hover { background: rgba(255,255,255,0.3); }
+        .btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-2px);
+        }
+        .email {
+            margin-top: 20px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            display: inline-block;
+        }
+        .email:hover {
+            color: white;
+        }
     </style>
 </head>
 <body>
     <div class="card">
-        <h1>Aleksandr</h1>
-        <p>Digital Infrastructure & Security<br>foggytun.uk</p>
-        <a href="https://t.me/your_telegram" class="btn">Telegram</a>
-        <a href="mailto:admin@foggytun.uk" class="btn">Email Me</a>
+        <h1>Aleksandr Borodin</h1>
+        <div class="title">
+            Water Treatment Expert<br>
+            Licensing of Nuclear Power Plant Equipment Expert
+        </div>
+        
+        <a href="https://t.me/ab_borodin" class="btn">Message me</a>
+        <a href="mailto:Borodinab@gmail.com" class="email">Borodinab@gmail.com</a>
     </div>
 </body>
 </html>
