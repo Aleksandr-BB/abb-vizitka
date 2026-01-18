@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-M9JWM5JS');</script>
-<!-- End Google Tag Manager -->
-
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleksandr Borodin | Water Treatment & Nuclear Equipment Expert</title>
     
@@ -45,6 +42,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             max-width: 450px;
             width: 90%;
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            position: relative;
         }
         h1 {
             font-size: 30px;
@@ -84,37 +82,81 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .btn-linkedin:hover {
             background: rgba(0, 119, 181, 0.6);
         }
-        .email {
+        .email-wrapper {
+            position: relative;
+            display: inline-block;
             margin-top: 20px;
+        }
+        .email {
             font-size: 14px;
             color: rgba(255, 255, 255, 0.6);
             text-decoration: none;
-            display: inline-block;
             transition: 0.3s;
+            cursor: pointer;
         }
         .email:hover {
             color: white;
         }
+        #copy-tooltip {
+            display: none;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translate(-50%, 10px); }
+            to { opacity: 1; transform: translate(-50%, 0); }
+        }
     </style>
 </head>
 <body>
-<!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M9JWM5JS"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  
-  <div class="card">
+<div class="card">
         <h1>Aleksandr Borodin</h1>
         <div class="title">
             Water Treatment Expert<br>
             Licensing of Nuclear Power Plant Equipment Expert
         </div>
         
-        <a href="https://t.me/ab_borodin" class="btn">Message me (Telegram)</a>
+        <a href="https://t.me/ab_borodin" target="_blank" class="btn">Message me (Telegram)</a>
         
         <a href="https://www.linkedin.com/in/aleksandr-borodin-6901a3193/" target="_blank" class="btn btn-linkedin">LinkedIn Profile</a>
         
-        <a href="mailto:Borodinab@gmail.com" class="email">Borodinab@gmail.com</a>
+        <div class="email-wrapper">
+            <div id="copy-tooltip">Скопировано!</div>
+            <a href="mailto:Borodinab@gmail.com" class="email" id="email-link">Borodinab@gmail.com</a>
+        </div>
     </div>
+
+    <script>
+        document.getElementById('email-link').addEventListener('click', function(e) {
+            e.preventDefault(); // Предотвращаем стандартное поведение
+            const email = "Borodinab@gmail.com";
+            
+            // Копируем в буфер
+            navigator.clipboard.writeText(email).then(() => {
+                const tooltip = document.getElementById('copy-tooltip');
+                tooltip.style.display = 'block';
+                
+                setTimeout(() => {
+                    tooltip.style.display = 'none';
+                }, 2000);
+
+                // Открываем почтовик в новой вкладке/окне
+                window.open("mailto:" + email, '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
