@@ -7,81 +7,85 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        body {
+        html, body {
+            height: 100%;
             font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f3f2ef; /* Светлый профессиональный фон LinkedIn */
+            background-color: #ffffff;
             color: rgba(0, 0, 0, 0.9);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-
-        .card {
-            background: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.08);
-            max-width: 680px;
-            width: 100%;
             overflow: hidden;
-            position: relative;
         }
 
-        /* Баннер с сохранением пропорций */
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Баннер на верхнюю часть экрана */
         .banner {
             width: 100%;
-            height: 180px;
+            flex: 1 1 45%;
             background-image: url('bg.jpg');
             background-size: cover;
             background-position: center;
         }
 
+        /* Контентная часть на нижнюю часть экрана */
         .profile-content {
-            padding: 0 24px 24px 24px;
+            flex: 1 1 55%;
+            padding: 0 40px 30px 40px;
             position: relative;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         /* Аватарка слева поверх баннера */
         .profile-img-container {
-            margin-top: -65px;
-            margin-bottom: 12px;
-            display: inline-block;
+            margin-top: -75px;
+            margin-bottom: 10px;
         }
 
         .profile-img {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid #ffffff;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            border: 5px solid #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             background: #fff;
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 600;
+            font-size: 32px;
+            font-weight: 700;
             color: #181818;
             margin-bottom: 12px;
         }
 
         .description {
-            color: #404040;
-            font-size: 14px;
-            line-height: 1.5;
-            margin-bottom: 20px;
+            color: #333333;
+            font-size: 16px;
+            line-height: 1.6;
             background: #f8f9fa;
             border: 1px solid #e9ecef;
-            padding: 14px 16px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
         }
 
-        /* Кнопки в ряд для экономии места по высоте */
+        /* Кнопки в ряд */
         .btn-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            margin-top: auto;
+            padding-bottom: 10px;
         }
 
         .btn {
@@ -89,10 +93,10 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 12px 24px;
+            border-radius: 25px;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 15px;
             transition: all 0.2s ease;
         }
 
@@ -114,34 +118,47 @@
         .btn-mail {
             background-color: transparent;
             color: #0a66c2;
-            border: 1px solid #0a66c2;
+            border: 1.5px solid #0a66c2;
         }
 
         .btn:hover {
             opacity: 0.9;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            html, body { overflow: auto; }
+            .container { height: auto; min-height: 100vh; }
+            .banner { height: 200px; flex: none; }
+            .profile-content { padding: 0 20px 20px 20px; flex: none; }
+            .profile-img { width: 110px; height: 110px; }
+            .profile-img-container { margin-top: -55px; }
+            h1 { font-size: 24px; }
+            .description { font-size: 14px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
+    <div class="container">
         <!-- Шапка-баннер -->
         <div class="banner"></div>
         
+        <!-- Основной блок -->
         <div class="profile-content">
-            <!-- Аватарка слева -->
-            <div class="profile-img-container">
-                <img src="profile.jpg" alt="Aleksandr Borodin" class="profile-img">
-            </div>
+            <div>
+                <div class="profile-img-container">
+                    <img src="profile.jpg" alt="Aleksandr Borodin" class="profile-img">
+                </div>
 
-            <h1>Aleksandr Borodin</h1>
-            
-            <div class="description">
-                Technical Leader with 20+ years of expertise in industrial water treatment and nuclear power infrastructure. 
-                Proven track record in managing complex EPC projects and licensing of VVER-1200 reactor safety-critical equipment 
-                within the regulatory framework of international standards (EU, MSZ/NBSZ, IAEA). 
-                Expert in membrane technologies (RO, UF, EDI) and asset care management.
+                <h1>Aleksandr Borodin</h1>
+                
+                <div class="description">
+                    Technical Leader with 20+ years of expertise in industrial water treatment and nuclear power infrastructure. 
+                    Proven track record in managing complex EPC projects and licensing of VVER-1200 reactor safety-critical equipment 
+                    within the regulatory framework of international standards (EU, MSZ/NBSZ, IAEA). 
+                    Expert in membrane technologies (RO, UF, EDI) and asset care management.
+                </div>
             </div>
             
             <div class="btn-container">
